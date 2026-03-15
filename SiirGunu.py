@@ -1778,47 +1778,58 @@ Ben açtım, ben girdim
 Selamlaştık ilk defa. - Metin Altıok"""
 ]
 
-# 3. Görsel Tasarım ve Karşılama
+# 3. Ana Başlık ve Karşılama (Sadece 1 kez yazılır)
 st.title("🎉 21 Mart Dünya Şiir Günü'nüz Kutlu Olsun! 🌸")
-
 st.markdown("""
     ### Merhaba Şiir Dostu! ✨
     🖋️ **Bir kalemden dökülen mısralar, bugün bir çiçek gibi gönlünüzde açsın.**
     
-    Öğrencilerimizden velilerimize, öğretmenlerimizden çalışanlarımıza yolu şiirden geçen herkes için hazırladığımız 
+    Öğrencilerimizden velilerimize yolu şiirden geçen herkes için hazırladığımız 
     bu küçük köşeye hoş geldiniz. 🌷
 """)
 
-st.write("---") 
+st.write("---")
 
-# 4. Buton ve Mantık (Burada Balonlar yerine Yapraklar Uçacak)
-if st.button('Bir Mısra Güzellik Seç 📜'):
-    # SONBAHAR YAPRAKLARI EFEKTİ (HTML ile)
+# 4. Buton ve Şiir Seçme (Yaprak Animasyonuyla Birlikte)
+if st.button('Günün Şiirini Seç 📜'):
+    # SONBAHAR YAPRAKLARI ANİMASYONU
     st.markdown("""
         <div style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 9999;">
+            <style>
+                .leaf { position: absolute; top: -10%; animation: fall linear infinite; }
+                @keyframes fall {
+                    0% { top: -10%; transform: translateX(0) rotate(0deg); }
+                    100% { top: 110%; transform: translateX(100px) rotate(360deg); }
+                }
+            </style>
             <div class="leaf" style="left: 10%; font-size: 30px; animation-duration: 7s; color: #d4a373;">🍂</div>
-            <div class="leaf" style="left: 25%; font-size: 25px; animation-duration: 9s; color: #bc6c25;">🍁</div>
-            <div class="leaf" style="left: 45%; font-size: 35px; animation-duration: 6s; color: #dda15e;">🍃</div>
-            <div class="leaf" style="left: 65%; font-size: 28px; animation-duration: 10s; color: #606c38;">🍂</div>
-            <div class="leaf" style="left: 80%; font-size: 32px; animation-duration: 8s; color: #a44a3f;">🍁</div>
+            <div class="leaf" style="left: 30%; font-size: 25px; animation-duration: 9s; color: #bc6c25;">🍁</div>
+            <div class="leaf" style="left: 50%; font-size: 35px; animation-duration: 6s; color: #dda15e;">🍃</div>
+            <div class="leaf" style="left: 70%; font-size: 28px; animation-duration: 10s; color: #606c38;">🍂</div>
+            <div class="leaf" style="left: 90%; font-size: 32px; animation-duration: 8s; color: #a44a3f;">🍁</div>
         </div>
     """, unsafe_allow_html=True)
 
+    # Şiir Seçimi
     secilen = random.choice(siirler)
-    st.markdown("### 🖋️ Sizin İçin Seçilen Şiir:")
     
-    # Başlık ve içeriği şık bir şekilde ayırarak gösterelim
+    # Başlık ve Şiiri Ayırıp Şık Gösterme
     parcalar = secilen.split("\n\n", 1)
     if len(parcalar) > 1:
-        st.subheader(f"✒️ {parcalar[0]}")
-        st.code(parcalar[1], language=None)
+        st.subheader(f"✒️ {parcalar[0]}") # Başlığı koyu yapar
+        st.code(parcalar[1], language=None) # Şiiri dize dize gösterir
     else:
         st.code(secilen, language=None)
-        
+
     st.write("---")
     st.markdown("🌸 *Dünya, şiirle daha güzel bir yer.*")
 else:
-    st.info("Ruhunuza iyi gelecek bir şiir için tıklamanız yeterli. ✨")
+    # Butona basılmadan önce görünen mesaj
+    st.info("Ruhunuza iyi gelecek bir şiir için butona tıklamanız yeterli. ✨")
+
+# 5. Alt Bilgi
+st.divider()
+st.caption("🖋️ Kalemin mısrayla, gönlün huzurla buluştuğu bir gün dileriz. 🌸")
 
 # 5. Alt Bilgi
 st.divider()
