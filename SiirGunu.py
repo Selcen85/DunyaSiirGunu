@@ -4,62 +4,83 @@ import random
 # 1. Sayfa Ayarları
 st.set_page_config(page_title="Dünya Şiir Günü", page_icon="🪶")
 
-# --- VINTAGE TASARIM GÜNCELLEMESİ ---
+import streamlit as st
+import random
+
+# 1. Sayfa Ayarları
+st.set_page_config(page_title="21 Mart Dünya Şiir Günü", page_icon="🖋️")
+
+# --- ESKİTME TASARIM VE SİMGELER ---
 st.markdown("""
     <style>
-    /* Arka Plan ve Vintage Süsler */
+    /* Ana Arka Plan */
     [data-testid="stAppViewContainer"] {
-        background-color: #f5f5dc !important;
+        background-color: #f5f5dc !important; /* Bej rengi */
         background-image: 
-            /* Sol üst köşe süsü (Vintage) */
-            url("https://www.transparenttextures.com/patterns/pinstripe.png"),
-            /* Sağ alt tüy (Daha zarif ve şeffaf) */
-            url("https://img.icons8.com/ios/450/quill-with-ink.png");
-        background-repeat: repeat, no-repeat !important;
-        background-position: center, right 5% bottom 5% !important;
-        background-size: auto, 180px !important; /* Tüy daha küçük ve zarif */
+            url("https://www.transparenttextures.com/patterns/natural-paper.png"), /* Kağıt dokusu */
+            url("https://img.icons8.com/ios/100/7d5a50/vintage-wrapper.png"),    /* Sol Üst Süs */
+            url("https://img.icons8.com/ios/150/7d5a50/quill-with-ink.png");      /* Sağ Alt Tüy */
+        background-position: center, left 20px top 20px, right 30px bottom 30px !important;
+        background-repeat: repeat, no-repeat, no-repeat !important;
         background-attachment: fixed !important;
-        opacity: 0.95;
+        background-size: auto, 80px, 150px !important;
     }
 
-    /* Sol tarafa vintage bir şerit/süs ekleyelim */
-    [data-testid="stAppViewContainer"]::before {
-        content: "";
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 10px;
-        height: 100%;
-        background: linear-gradient(to bottom, #7d5a50, #4a3728);
-        box-shadow: 2px 0 5px rgba(0,0,0,0.2);
-        z-index: 1;
-    }
-
-    /* Şiir Başlıklarını Koyu Yapmak İçin Stil */
-    .siir-baslik {
-        font-weight: 800 !important;
-        color: #2c1e12 !important;
-        font-size: 1.3rem !important;
-        margin-bottom: 5px;
-        display: block;
-        text-decoration: underline;
-    }
-
-    /* Yazı Tipi */
+    /* Yazı Tipi ve Renkler */
     html, body, [class*="css"] {
         font-family: 'Georgia', serif !important;
+        color: #3e2723 !important;
     }
 
-    /* Şiir Kutusu */
+    /* Şiir Kutusu (Dizeleri koruyan alan) */
     code {
-        background-color: rgba(255, 255, 255, 0.4) !important;
+        background-color: rgba(255, 255, 255, 0.3) !important;
+        color: #1b1b1b !important;
+        font-size: 1.2rem !important;
         border: none !important;
-        border-left: 4px solid #7d5a50 !important; /* Sol tarafta şık bir çizgi */
-        font-size: 1.15rem !important;
-        color: #1a1a1a !important;
+        padding: 20px !important;
+    }
+
+    /* Buton Tasarımı */
+    .stButton>button {
+        border-radius: 15px !important;
+        background-color: #7d5a50 !important;
+        color: #f5f5dc !important;
+        border: 1px solid #3e2723 !important;
+        padding: 10px 25px !important;
     }
     </style>
     """, unsafe_allow_html=True)
+
+# 2. Şiir Listesi (Baştaki gibi temiz tutalım)
+siirler = [
+    # Örnek Format: "BAŞLIK\n\nŞiir içeriği..."
+    "HOŞ GELDİN KADINIM\n\nHoş geldin kadınım benim hoş geldin\nyorulmuşsundur...",
+    "66. SONE\n\nVazgeçtim bu dünyadan tek ölüm paklar beni..."
+    # Buraya senin tüm şiirlerin gelecek
+]
+
+# 3. İçerik
+st.balloons()
+st.title("🖋️ 21 Mart Dünya Şiir Günü 🌸")
+st.markdown("---")
+st.write("Hoş geldiniz. Ruhunuza dokunacak bir mısra seçmek için butona tıklayın.")
+
+# 4. Mantık
+if st.button('Günün Şiirini Oku'):
+    secilen = random.choice(siirler)
+    
+    # Şiiri ikiye bölüp başlığı kalın yapalım
+    parçalar = secilen.split("\n\n", 1)
+    if len(parçalar) > 1:
+        st.subheader(f"✒️ {parçalar[0]}") # Başlık otomatik kalın ve şık olur
+        st.code(parçalar[1], language=None) # Şiirin kendisi alt alta dizilir
+    else:
+        st.code(secilen, language=None)
+        
+    st.write("---")
+else:
+    st.info("Mısralar sizi bekliyor...")
 
 # 2. Şiir Listesi (Tüm gönderdiklerin dahil edildi)
 siirler = [
