@@ -1779,7 +1779,7 @@ Selamlaştık ilk defa. - Metin Altıok"""
 ]
 
 # 3. Görsel Tasarım (Sadece Bir Kez Yazıldı)
-st.balloons()
+st.leafs()
 st.title("🎉 21 Mart Dünya Şiir Günü'nüz Kutlu Olsun! 🌸")
 
 st.markdown("""
@@ -1789,7 +1789,7 @@ st.markdown("""
     Öğrencilerimizden velilerimize, öğretmenlerimizden çalışanlarımıza yolu şiirden geçen herkes için hazırladığımız 
     bu küçük köşeye hoş geldiniz. Şiir, hayatın gri renkleri arasındaki en güzel gökkuşağıdır.
     
-    🌷 *Aşağıdaki butona basarak size özel seçilen şiiri okuyabilirsiniz.*
+    🌷 *Aşağıdaki kutucuğa basarak size özel seçilen şiiri okuyabilirsiniz.*
 """)
 
 st.write("---") 
@@ -1804,7 +1804,7 @@ if st.button('Bir Mısra Güzellik Seç 📜'):
     st.write("---")
     st.markdown("🌸 *Dünya, şiirle daha güzel bir yer.*")
 else:
-    st.info("Ruhunuza iyi gelecek bir şiir için butona tıklamanız yeterli. ✨")
+    st.info("Ruhunuza iyi gelecek bir şiir için tıklamanız yeterli. ✨")
 
 # 5. Alt Bilgi
 st.divider()
