@@ -1784,8 +1784,10 @@ st.markdown("""
     ### Merhaba Şiir Dostu! ✨
     🖋️ **Bir kalemden dökülen mısralar, bugün bir çiçek gibi gönlünüzde açsın.**
     
-    Öğrencilerimizden velilerimize yolu şiirden geçen herkes için hazırladığımız 
-    bu küçük köşeye hoş geldiniz. 🌷
+    Öğrencilerimizden velilerimize, öğretmenlerimizden çalışanlarımıza yolu şiirden geçen herkes için hazırladığımız 
+    bu küçük köşeye hoş geldiniz. Şiir, hayatın gri renkleri arasındaki en güzel gökkuşağıdır.
+    
+    🌷 *Aşağıdaki kutucuğa tıklayarak size özel seçilen şiiri okuyabilirsiniz.*🌷
 """)
 
 st.write("---")
@@ -1825,11 +1827,7 @@ if st.button('Günün Şiirini Seç 📜'):
     st.markdown("🌸 *Dünya, şiirle daha güzel bir yer.*")
 else:
     # Butona basılmadan önce görünen mesaj
-    st.info("Ruhunuza iyi gelecek bir şiir için butona tıklamanız yeterli. ✨")
-
-# 5. Alt Bilgi
-st.divider()
-st.caption("🖋️ Kalemin mısrayla, gönlün huzurla buluştuğu bir gün dileriz. 🌸")
+    st.info("Ruhunuza iyi gelecek bir şiir için tıklamanız yeterli. ✨")
 
 # 5. Alt Bilgi
 st.divider()
