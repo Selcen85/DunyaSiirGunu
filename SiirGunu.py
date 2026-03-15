@@ -1712,18 +1712,30 @@ Selamlaştık ilk defa. - Metin Altıok"""
 
 # 3. Görsel Tasarım
 st.balloons()
-st.title("🎉 21 Mart Dünya Şiir Günü'nüz Kutlu Olsun!")
-st.subheader("Öğrencilerimiz ve Velilerimiz İçin Şiir Köşesi")
+st.title("🎉 21 Mart Dünya Şiir Günü'nüz Kutlu Olsun!🌸")
+st.markdown("""
+    ### Merhaba, Şiir Dostu! ✨
+    🖋️ **Bir kalemden dökülen mısralar, bugün bir çiçek gibi gönlünüzde açsın.**
+    
+    Öğrencilerimizden velilerimize, öğretmenlerimizden çalışanlarımıza yolu şiirden geçen herkes için hazırladığımız 
+    bu küçük köşeye hoş geldiniz. Şiir, hayatın gri renkleri arasındaki en güzel gökkuşağıdır.
+    
+    🌷 *Aşağıdaki butona basarak size özel seçilen şiiri okuyabilirsiniz.*
+""")
+
+st.write("---") # Araya ince bir çizgi çeker
 
 # 4. Buton ve Mantık
-if st.button('Rastgele Bir Şiir Seç 📜'):
+if st.button('Bir Mısra Güzellik Seç 📜'):
     secilen = random.choice(siirler)
-    st.markdown("---")
-    st.info(secilen)
-    st.markdown("---")
+    st.markdown("### 🖋️ Sizin İçin Seçilen Şiir:")
+    st.code(secilen, language=None)
+    
+    st.write("---")
+    st.markdown("🌸 *Dünya, şiirle daha güzel bir yer.*")
 else:
-    st.write("Günün şiirini okumak için yukarıdaki butona tıklayın.")
+    st.info("Ruhunuza iyi gelecek bir şiir için butona tıklamanız yeterli. ✨")
 
 # 5. Alt Bilgi
 st.divider()
-st.caption("Bu uygulama eğitim amaçlı kodlanmıştır. ✨")
+st.caption("🖋️ Kalemin mısrayla, gönlün huzurla buluştuğu bir gün dileriz. 🌸")
