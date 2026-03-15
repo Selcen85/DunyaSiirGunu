@@ -1,48 +1,95 @@
 import streamlit as st
 import random
 
-# 1. Sayfa Ayarları
-st.set_page_config(page_title="Dünya Şiir Günü", page_icon="🪶")
+import streamlit as st
+import random
 
-# --- GELİŞMİŞ GÖRSEL TASARIM ---
+# 1. Sayfa Ayarları
+st.set_page_config(page_title="21 Mart Dünya Şiir Günü", page_icon="🖋️")
+
+# --- ESKİTME TASARIM VE SİMGELER ---
 st.markdown("""
     <style>
-    /* 1. Arka Plan ve Genel Renkler */
+    /* Ana Arka Plan Ayarları */
     [data-testid="stAppViewContainer"] {
-        background-color: #f5f5dc !important; /* Bej rengi */
-        /* Arka plana şeffaf bir tüy kalem ikonu yerleştiriyoruz */
-        background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png"), 
-                          url("https://img.icons8.com/ios/452/quill-with-ink.png") !important;
-        background-repeat: repeat, no-repeat !important;
-        background-position: center, right bottom !important;
-        background-size: auto, 300px !important; /* İkonun büyüklüğü */
+        background-color: #f5f5dc !important; 
+        background-image: 
+            url("https://www.transparenttextures.com/patterns/natural-paper.png"),
+            url("https://img.icons8.com/ios/100/7d5a50/vintage-wrapper.png"),    
+            url("https://img.icons8.com/ios/150/7d5a50/quill-with-ink.png");      
+        background-position: center, left 20px top 20px, right 30px bottom 30px !important;
+        background-repeat: repeat, no-repeat, no-repeat !important;
         background-attachment: fixed !important;
+        background-size: auto, 80px, 150px !important;
     }
 
-    /* 2. Yazı Tiplerini Değiştirme (Şiirsel bir hava için) */
-    html, body, [class*="css"]  {
-        font-family: 'Georgia', serif !important; /* Daha edebi bir font */
-        color: #2c1e12 !important;
+    /* Yazı Tipi ve Genel Renkler */
+    html, body, [class*="css"] {
+        font-family: 'Georgia', serif !important;
+        color: #3e2723 !important;
     }
 
-    /* 3. Şiir Kutusu (st.code) Tasarımı */
+    /* Şiir Kutusu Tasarımı */
     code {
-        background-color: rgba(255, 255, 255, 0.5) !important;
-        border: 1px solid #d3c4a8 !important;
-        color: #2c1e12 !important;
-        font-size: 1.1rem !important;
+        background-color: rgba(255, 255, 255, 0.4) !important;
+        color: #1a1a1a !important;
+        font-size: 1.25rem !important;
         line-height: 1.6 !important;
-        border-radius: 10px !important;
+        border: none !important;
+        border-left: 5px solid #7d5a50 !important;
+        padding: 25px !important;
     }
 
-    /* 4. Butonun Üzerine Gelince (Hover) Efekti */
-    .stButton>button:hover {
-        background-color: #4a3728 !important;
+    /* Buton Tasarımı */
+    .stButton>button {
+        border-radius: 20px !important;
+        background-color: #7d5a50 !important;
         color: #f5f5dc !important;
-        border: 2px solid #f5f5dc !important;
+        border: 2px solid #3e2723 !important;
+        padding: 12px 30px !important;
+        font-weight: bold !important;
     }
     </style>
     """, unsafe_allow_html=True)
+
+# 2. Şiir Listesi (Metin Altıok'un şiiriyle biten tam listen buraya gelecek)
+siirler = [
+    """HOŞ GELDİN KADINIM
+    
+Hoş geldin kadınım benim hoş geldin 
+yorulmuşsundur; 
+...""",
+    # ... Diğer tüm şiirlerin ...
+]
+
+# 3. Ana Görsel Tasarım (En Üst Kısım)
+st.balloons()
+st.title("🎉 21 Mart Dünya Şiir Günü'nüz Kutlu Olsun! 🌸")
+
+st.markdown("""
+    🖋️ **Hoş Geldiniz...** Bir kalemden dökülen mısralar, bugün bir çiçek gibi gönlünüzde açsın.  
+    Ruhunuza dokunacak bir şiir seçmek için aşağıdaki butona tıklayın.
+""")
+
+st.write("---")
+
+# 4. Buton ve Şiir Gösterme Mantığı
+if st.button('Günün Şiirini Seç 📜'):
+    secilen = random.choice(siirler)
+    
+    # Şiiri dize yapısını bozmadan gösterir
+    st.markdown("### 🖋️ Sizin İçin Seçilen Şiir:")
+    st.code(secilen, language=None)
+    
+    st.write("---")
+    st.caption("🌸 Dünya, şiirle daha güzel bir yer.")
+else:
+    # Butona basılmadan önce görünen hafif bir ipucu
+    st.write("✨ Mısraların büyülü dünyasına girmek için hazır mısınız?")
+
+# 5. Alt Bilgi
+st.divider()
+st.caption("🖋️ Kalemin mısrayla, gönlün huzurla buluştuğu bir gün dileriz. ✨")
 
 # 2. Şiir Listesi (Baştaki gibi temiz tutalım)
 siirler = [
