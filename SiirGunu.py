@@ -1794,38 +1794,6 @@ st.markdown("""
 
 st.write("---") 
 
-# --- FARKLI RENKTE VINTAGE YAPRAKLAR VE ÇİÇEKLER ANİMASYONU (HTML/CSS) ---
-# Balonlar yerine farklı renklerde zarif yapraklar ve çiçekler uçmasını sağlar.
-st.markdown("""
-    <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1000; overflow: hidden;">
-        <style>
-            .vintage-leaf {
-                position: absolute;
-                background-size: contain;
-                background-repeat: no-repeat;
-                opacity: 0.8;
-                animation: floatUpwards linear infinite;
-            }
-            @keyframes floatUpwards {
-                0% { transform: translateY(110vh) rotate(0deg); opacity: 0.8; }
-                100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
-            }
-        </style>
-        
-        <div class="vintage-leaf" style="width: 20px; height: 20px; left: 10%; animation-duration: 15s; background-image: url('https://img.icons8.com/ios-filled/50/4caf50/leaf.png');"></div>
-        <div class="vintage-leaf" style="width: 25px; height: 25px; left: 25%; animation-duration: 18s; animation-delay: 2s; background-image: url('https://img.icons8.com/ios-filled/50/e91e63/rose.png');"></div>
-        <div class="vintage-leaf" style="width: 18px; height: 18px; left: 40%; animation-duration: 12s; animation-delay: 1s; background-image: url('https://img.icons8.com/ios-filled/50/7d5a50/leaf.png');"></div>
-        <div class="vintage-leaf" style="width: 22px; height: 22px; left: 60%; animation-duration: 16s; animation-delay: 3s; background-image: url('https://img.icons8.com/ios-filled/50/ff9800/leaf.png');"></div>
-        <div class="vintage-leaf" style="width: 24px; height: 24px; left: 75%; animation-duration: 19s; animation-delay: 1.5s; background-image: url('https://img.icons8.com/ios-filled/50/9c27b0/lavender.png');"></div>
-        <div class="vintage-leaf" style="width: 21px; height: 21px; left: 88%; animation-duration: 14s; animation-delay: 4s; background-image: url('https://img.icons8.com/ios-filled/50/ffeb3b/sunflower.png');"></div>
-        
-        <div class="vintage-leaf" style="width: 19px; height: 19px; left: 15%; animation-duration: 17s; animation-delay: 5s; background-image: url('https://img.icons8.com/ios-filled/50/4caf50/leaf.png');"></div>
-        <div class="vintage-leaf" style="width: 26px; height: 26px; left: 35%; animation-duration: 20s; animation-delay: 6s; background-image: url('https://img.icons8.com/ios-filled/50/e91e63/rose.png');"></div>
-        <div class="vintage-leaf" style="width: 17px; height: 17px; left: 55%; animation-duration: 13s; animation-delay: 7s; background-image: url('https://img.icons8.com/ios-filled/50/7d5a50/leaf.png');"></div>
-        <div class="vintage-leaf" style="width: 23px; height: 23px; left: 70%; animation-duration: 18s; animation-delay: 8s; background-image: url('https://img.icons8.com/ios-filled/50/ff9800/leaf.png');"></div>
-        <div class="vintage-leaf" style="width: 22px; height: 22px; left: 85%; animation-duration: 15s; animation-delay: 9s; background-image: url('https://img.icons8.com/ios-filled/50/9c27b0/lavender.png');"></div>
-    </div>
-    """, unsafe_allow_html=True)
 
 # 4. Buton ve Mantık (Sadece Bir Kez Yazıldı)
 if st.button('Bir Mısra Güzellik Seç 📜'):
