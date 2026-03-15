@@ -1817,12 +1817,7 @@ st.markdown("""
 
 st.write("---")
 
-# 4. Buton ve Şiir Seçme (Yaprak Animasyonuyla Birlikte)
-
-if st.button('Bir Mısra Güzellik Seç📜'):
-    with st.spinner('🌸 Size özel bir mısra hazırlanıyor...'):
-        time.sleep(1) # Zarif bir bekleme süresi
-        
+# 4. Buton ve Şiir Seçme (Yaprak Animasyonuyla Birlikte)        
 if st.button('Bir Mısra Güzellik Seç 📜'):
     # SONBAHAR YAPRAKLARI ANİMASYONU
     st.markdown("""
