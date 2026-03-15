@@ -4,26 +4,38 @@ import random
 # 1. Sayfa Ayarları
 st.set_page_config(page_title="Dünya Şiir Günü", page_icon="🪶")
 
-# --- ARKA PLAN VE STİL AYARI (CSS) ---
+# --- ARKA PLAN VE STİL AYARI (Kesin Çözüm) ---
 st.markdown("""
     <style>
-    .stApp {
-        background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), 
-                    url("https://www.transparenttextures.com/patterns/parchment.png");
-        background-color: #fdfcf0; /* Eski kağıt tonu */
+    /* Tüm ana ekranı ve arka planı hedef alıyoruz */
+    [data-testid="stAppViewContainer"] {
+        background-color: #fdfcf0 !important; /* !important zorunlu kılar */
+        background-image: url("https://www.transparenttextures.com/patterns/parchment.png") !important;
     }
+    
+    /* Üst menü kısmını da aynı renk yapalım */
+    [data-testid="stHeader"] {
+        background: rgba(0,0,0,0) !important;
+    }
+
+    /* Yazıların daha okunaklı olması için ana metin alanı */
+    .stMarkdown, .stTitle, .stSubheader {
+        color: #4a3728 !important; /* Koyu kahverengi yazı tonu */
+    }
+
+    /* Buton tasarımı */
     .stButton>button {
-        border-radius: 20px;
-        background-color: #7d5a50;
-        color: white;
-        border: none;
+        border-radius: 20px !important;
+        background-color: #7d5a50 !important;
+        color: white !important;
+        border: 2px solid #4a3728 !important;
     }
     </style>
-    """, unsafe_allow_html=True) #
+    """, unsafe_allow_html=True)
 
 # 2. Şiir Listesi (Tüm gönderdiklerin dahil edildi)
 siirler = [
-    """Hoş geldin kadınım 
+    """Hoş Geldin Kadınım 
 Hoş geldin kadınım benim hoş geldin 
 yorulmuşsundur; 
 nasıl etsem de yıkasam ayacıklarını 
@@ -1641,8 +1653,6 @@ Daha nem olacaktın bir tanem
 Gülen ayvam, ağlayan narımsın
 Kadınım, kısrağım, karımsın.
 
-II
-
 Sigara paketlerine resmini çizdiğim
 Körpe fidanlara adını yazdığım
 Karam, karam
@@ -1731,7 +1741,7 @@ Selamlaştık ilk defa. - Metin Altıok"""
 st.balloons()
 st.title("🎉 21 Mart Dünya Şiir Günü'nüz Kutlu Olsun!🌸")
 st.markdown("""
-    ### Merhaba, Şiir Dostu! ✨
+    ### Merhaba Şiir Dostu! ✨
     🖋️ **Bir kalemden dökülen mısralar, bugün bir çiçek gibi gönlünüzde açsın.**
     
     Öğrencilerimizden velilerimize, öğretmenlerimizden çalışanlarımıza yolu şiirden geçen herkes için hazırladığımız 
