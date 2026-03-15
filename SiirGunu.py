@@ -1778,8 +1778,7 @@ Ben açtım, ben girdim
 Selamlaştık ilk defa. - Metin Altıok"""
 ]
 
-# 3. Görsel Tasarım (Sadece Bir Kez Yazıldı)
-st.baloons()
+# 3. Görsel Tasarım ve Karşılama
 st.title("🎉 21 Mart Dünya Şiir Günü'nüz Kutlu Olsun! 🌸")
 
 st.markdown("""
@@ -1787,20 +1786,35 @@ st.markdown("""
     🖋️ **Bir kalemden dökülen mısralar, bugün bir çiçek gibi gönlünüzde açsın.**
     
     Öğrencilerimizden velilerimize, öğretmenlerimizden çalışanlarımıza yolu şiirden geçen herkes için hazırladığımız 
-    bu küçük köşeye hoş geldiniz. Şiir, hayatın gri renkleri arasındaki en güzel gökkuşağıdır.
-    
-    🌷 *Aşağıdaki kutucuğa basarak size özel seçilen şiiri okuyabilirsiniz.*
+    bu küçük köşeye hoş geldiniz. 🌷
 """)
 
 st.write("---") 
 
-
-# 4. Buton ve Mantık (Sadece Bir Kez Yazıldı)
+# 4. Buton ve Mantık (Burada Balonlar yerine Yapraklar Uçacak)
 if st.button('Bir Mısra Güzellik Seç 📜'):
+    # SONBAHAR YAPRAKLARI EFEKTİ (HTML ile)
+    st.markdown("""
+        <div style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 9999;">
+            <div class="leaf" style="left: 10%; font-size: 30px; animation-duration: 7s; color: #d4a373;">🍂</div>
+            <div class="leaf" style="left: 25%; font-size: 25px; animation-duration: 9s; color: #bc6c25;">🍁</div>
+            <div class="leaf" style="left: 45%; font-size: 35px; animation-duration: 6s; color: #dda15e;">🍃</div>
+            <div class="leaf" style="left: 65%; font-size: 28px; animation-duration: 10s; color: #606c38;">🍂</div>
+            <div class="leaf" style="left: 80%; font-size: 32px; animation-duration: 8s; color: #a44a3f;">🍁</div>
+        </div>
+    """, unsafe_allow_html=True)
+
     secilen = random.choice(siirler)
     st.markdown("### 🖋️ Sizin İçin Seçilen Şiir:")
-    st.code(secilen, language=None) # Şiiri alt alta gösterir
     
+    # Başlık ve içeriği şık bir şekilde ayırarak gösterelim
+    parcalar = secilen.split("\n\n", 1)
+    if len(parcalar) > 1:
+        st.subheader(f"✒️ {parcalar[0]}")
+        st.code(parcalar[1], language=None)
+    else:
+        st.code(secilen, language=None)
+        
     st.write("---")
     st.markdown("🌸 *Dünya, şiirle daha güzel bir yer.*")
 else:
