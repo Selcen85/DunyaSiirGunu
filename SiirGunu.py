@@ -1853,3 +1853,17 @@ else:
 # 5. Alt Bilgi (Kurumsal Bilgi Eklendi)
 st.divider()
 st.caption("🖋️ İzmir Özel Tevfik Fikret Okulları - Kalemin mısrayla buluştuğu günler dileriz. ✨🌸")
+
+# --- YAN MENÜ MÜZİK BÖLÜMÜ ---
+with st.sidebar:
+    st.markdown("### 🎹 Şiir Dinletisi")
+    st.markdown("Şiirlerin ruhuna eşlik etmesi için fon müziğini başlatabilirsiniz:")
+    
+    # Zarif bir piyano müziği (Erik Satie - Gymnopedie No.1 tarzında huzurlu bir parça)
+    audio_url = "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3"
+    
+    st.audio(audio_url, format="audio/mp3")
+    
+    st.write("---")
+    st.caption("🖋️ 'Şiir, sesle anlam arasında o ince çizgidir.'")
+    st.image(OKUL_LOGO_LINKI, width=100) # Okul logosunu yan menüde de küçükçe gösterelim
