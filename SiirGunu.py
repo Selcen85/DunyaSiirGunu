@@ -2,7 +2,23 @@ import streamlit as st
 import random
 
 # 1. Sayfa Ayarları
-st.set_page_config(page_title="21 Mart Dünya Şiir Günü", page_icon="📜")
+st.set_page_config(page_title="Dünya Şiir Günü", page_icon="🪶")
+
+# --- ARKA PLAN VE STİL AYARI (CSS) ---
+st.markdown("""
+    <style>
+    .stApp {
+        background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), 
+                    url("https://www.transparenttextures.com/patterns/parchment.png");
+        background-color: #fdfcf0; /* Hafif sarımtırak, eski kağıt tonu */
+    }
+    .stButton>button {
+        border-radius: 20px;
+        background-color: #7d5a50;
+        color: white;
+    }
+    </style>
+    """, unsafe_allow_stdio=True, unsafe_allow_html=True)
 
 # 2. Şiir Listesi (Tüm gönderdiklerin dahil edildi)
 siirler = [
