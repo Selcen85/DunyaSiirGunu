@@ -4,31 +4,42 @@ import random
 # 1. Sayfa Ayarları
 st.set_page_config(page_title="Dünya Şiir Günü", page_icon="🪶")
 
-# --- ARKA PLAN VE STİL AYARI (Kesin Çözüm) ---
+# --- GELİŞMİŞ GÖRSEL TASARIM ---
 st.markdown("""
     <style>
-    /* Tüm ana ekranı ve arka planı hedef alıyoruz */
+    /* 1. Arka Plan ve Genel Renkler */
     [data-testid="stAppViewContainer"] {
-        background-color: #fdfcf0 !important; /* !important zorunlu kılar */
-        background-image: url("https://www.transparenttextures.com/patterns/parchment.png") !important;
-    }
-    
-    /* Üst menü kısmını da aynı renk yapalım */
-    [data-testid="stHeader"] {
-        background: rgba(0,0,0,0) !important;
-    }
-
-    /* Yazıların daha okunaklı olması için ana metin alanı */
-    .stMarkdown, .stTitle, .stSubheader {
-        color: #4a3728 !important; /* Koyu kahverengi yazı tonu */
+        background-color: #f5f5dc !important; /* Bej rengi */
+        /* Arka plana şeffaf bir tüy kalem ikonu yerleştiriyoruz */
+        background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png"), 
+                          url("https://img.icons8.com/ios/452/quill-with-ink.png") !important;
+        background-repeat: repeat, no-repeat !important;
+        background-position: center, right bottom !important;
+        background-size: auto, 300px !important; /* İkonun büyüklüğü */
+        background-attachment: fixed !important;
     }
 
-    /* Buton tasarımı */
-    .stButton>button {
-        border-radius: 20px !important;
-        background-color: #7d5a50 !important;
-        color: white !important;
-        border: 2px solid #4a3728 !important;
+    /* 2. Yazı Tiplerini Değiştirme (Şiirsel bir hava için) */
+    html, body, [class*="css"]  {
+        font-family: 'Georgia', serif !important; /* Daha edebi bir font */
+        color: #2c1e12 !important;
+    }
+
+    /* 3. Şiir Kutusu (st.code) Tasarımı */
+    code {
+        background-color: rgba(255, 255, 255, 0.5) !important;
+        border: 1px solid #d3c4a8 !important;
+        color: #2c1e12 !important;
+        font-size: 1.1rem !important;
+        line-height: 1.6 !important;
+        border-radius: 10px !important;
+    }
+
+    /* 4. Butonun Üzerine Gelince (Hover) Efekti */
+    .stButton>button:hover {
+        background-color: #4a3728 !important;
+        color: #f5f5dc !important;
+        border: 2px solid #f5f5dc !important;
     }
     </style>
     """, unsafe_allow_html=True)
