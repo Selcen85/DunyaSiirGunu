@@ -4,50 +4,42 @@ import random
 # 1. Sayfa Ayarları
 st.set_page_config(page_title="Dünya Şiir Günü", page_icon="🪶")
 
-import streamlit as st
-import random
-
-# 1. Sayfa Ayarları
-st.set_page_config(page_title="21 Mart Dünya Şiir Günü", page_icon="🖋️")
-
-# --- ESKİTME TASARIM VE SİMGELER ---
+# --- GELİŞMİŞ GÖRSEL TASARIM ---
 st.markdown("""
     <style>
-    /* Ana Arka Plan */
+    /* 1. Arka Plan ve Genel Renkler */
     [data-testid="stAppViewContainer"] {
         background-color: #f5f5dc !important; /* Bej rengi */
-        background-image: 
-            url("https://www.transparenttextures.com/patterns/natural-paper.png"), /* Kağıt dokusu */
-            url("https://img.icons8.com/ios/100/7d5a50/vintage-wrapper.png"),    /* Sol Üst Süs */
-            url("https://img.icons8.com/ios/150/7d5a50/quill-with-ink.png");      /* Sağ Alt Tüy */
-        background-position: center, left 20px top 20px, right 30px bottom 30px !important;
-        background-repeat: repeat, no-repeat, no-repeat !important;
+        /* Arka plana şeffaf bir tüy kalem ikonu yerleştiriyoruz */
+        background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png"), 
+                          url("https://img.icons8.com/ios/452/quill-with-ink.png") !important;
+        background-repeat: repeat, no-repeat !important;
+        background-position: center, right bottom !important;
+        background-size: auto, 300px !important; /* İkonun büyüklüğü */
         background-attachment: fixed !important;
-        background-size: auto, 80px, 150px !important;
     }
 
-    /* Yazı Tipi ve Renkler */
-    html, body, [class*="css"] {
-        font-family: 'Georgia', serif !important;
-        color: #3e2723 !important;
+    /* 2. Yazı Tiplerini Değiştirme (Şiirsel bir hava için) */
+    html, body, [class*="css"]  {
+        font-family: 'Georgia', serif !important; /* Daha edebi bir font */
+        color: #2c1e12 !important;
     }
 
-    /* Şiir Kutusu (Dizeleri koruyan alan) */
+    /* 3. Şiir Kutusu (st.code) Tasarımı */
     code {
-        background-color: rgba(255, 255, 255, 0.3) !important;
-        color: #1b1b1b !important;
-        font-size: 1.2rem !important;
-        border: none !important;
-        padding: 20px !important;
+        background-color: rgba(255, 255, 255, 0.5) !important;
+        border: 1px solid #d3c4a8 !important;
+        color: #2c1e12 !important;
+        font-size: 1.1rem !important;
+        line-height: 1.6 !important;
+        border-radius: 10px !important;
     }
 
-    /* Buton Tasarımı */
-    .stButton>button {
-        border-radius: 15px !important;
-        background-color: #7d5a50 !important;
+    /* 4. Butonun Üzerine Gelince (Hover) Efekti */
+    .stButton>button:hover {
+        background-color: #4a3728 !important;
         color: #f5f5dc !important;
-        border: 1px solid #3e2723 !important;
-        padding: 10px 25px !important;
+        border: 2px solid #f5f5dc !important;
     }
     </style>
     """, unsafe_allow_html=True)
