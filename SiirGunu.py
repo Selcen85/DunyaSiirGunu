@@ -1779,7 +1779,7 @@ Selamlaştık ilk defa. - Metin Altıok"""
 ]
 
 # 3. Görsel Tasarım (Sadece Bir Kez Yazıldı)
-st.leafs()
+st.baloons()
 st.title("🎉 21 Mart Dünya Şiir Günü'nüz Kutlu Olsun! 🌸")
 
 st.markdown("""
