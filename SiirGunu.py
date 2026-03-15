@@ -2065,7 +2065,7 @@ st.markdown("""
 
 st.write("---")
 
-# 4. Buton ve Şiir Seçme (Yaprak Animasyonuyla Birlikte)        
+# 4. Buton ve Şiir Seçme (Yaprak Animasyonu ve Müzik ile)
 if st.button('Bir Mısra Güzellik Seç 📜'):
     # SONBAHAR YAPRAKLARI ANİMASYONU
     st.markdown("""
@@ -2085,6 +2085,11 @@ if st.button('Bir Mısra Güzellik Seç 📜'):
         </div>
     """, unsafe_allow_html=True)
 
+    # --- MÜZİK EKLEMESİ ---
+    st.markdown("##### 🎹 Fon Müziği: Erik Satie - Gymnopédie No.1")
+    # YouTube üzerinden kararlı bağlantı (Görseli küçük tutmak için)
+    st.video("https://www.youtube.com/watch?v=S-Xm7s9eGxU")
+
     # Şiir Seçimi
     secilen = random.choice(siirler)
     
@@ -2092,11 +2097,10 @@ if st.button('Bir Mısra Güzellik Seç 📜'):
     # Şiiri tek parça halinde gösteriyoruz (Eski düzen)
     st.code(secilen, language=None)
 
-    st.write("---")
+   st.write("---")
     st.markdown("🌸 *Dünya, şiirle daha güzel bir yer.*")
 else:
-    # Butona basılmadan önce görünen mesaj
-    st.info("Ruhunuza iyi gelecek bir şiir için tıklamanız yeterli. ✨")
+    st.info("Ruhunuza iyi gelecek bir şiir ve huzurlu bir ezgi için tıklamanız yeterli. ✨")
 
 # 5. Alt Bilgi (Kurumsal Bilgi Eklendi)
 st.divider()
