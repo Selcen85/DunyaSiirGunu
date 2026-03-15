@@ -10,15 +10,16 @@ st.markdown("""
     .stApp {
         background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), 
                     url("https://www.transparenttextures.com/patterns/parchment.png");
-        background-color: #fdfcf0; /* Hafif sarımtırak, eski kağıt tonu */
+        background-color: #fdfcf0; /* Eski kağıt tonu */
     }
     .stButton>button {
         border-radius: 20px;
         background-color: #7d5a50;
         color: white;
+        border: none;
     }
     </style>
-    """, unsafe_allow_stdio=True, unsafe_allow_html=True)
+    """, unsafe_allow_html=True) #
 
 # 2. Şiir Listesi (Tüm gönderdiklerin dahil edildi)
 siirler = [
