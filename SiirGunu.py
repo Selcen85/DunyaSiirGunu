@@ -4,42 +4,59 @@ import random
 # 1. Sayfa Ayarları
 st.set_page_config(page_title="Dünya Şiir Günü", page_icon="🪶")
 
-# --- GELİŞMİŞ GÖRSEL TASARIM ---
+# --- VINTAGE TASARIM GÜNCELLEMESİ ---
 st.markdown("""
     <style>
-    /* 1. Arka Plan ve Genel Renkler */
+    /* Arka Plan ve Vintage Süsler */
     [data-testid="stAppViewContainer"] {
-        background-color: #f5f5dc !important; /* Bej rengi */
-        /* Arka plana şeffaf bir tüy kalem ikonu yerleştiriyoruz */
-        background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png"), 
-                          url("https://img.icons8.com/ios/452/quill-with-ink.png") !important;
+        background-color: #f5f5dc !important;
+        background-image: 
+            /* Sol üst köşe süsü (Vintage) */
+            url("https://www.transparenttextures.com/patterns/pinstripe.png"),
+            /* Sağ alt tüy (Daha zarif ve şeffaf) */
+            url("https://img.icons8.com/ios/450/quill-with-ink.png");
         background-repeat: repeat, no-repeat !important;
-        background-position: center, right bottom !important;
-        background-size: auto, 300px !important; /* İkonun büyüklüğü */
+        background-position: center, right 5% bottom 5% !important;
+        background-size: auto, 180px !important; /* Tüy daha küçük ve zarif */
         background-attachment: fixed !important;
+        opacity: 0.95;
     }
 
-    /* 2. Yazı Tiplerini Değiştirme (Şiirsel bir hava için) */
-    html, body, [class*="css"]  {
-        font-family: 'Georgia', serif !important; /* Daha edebi bir font */
+    /* Sol tarafa vintage bir şerit/süs ekleyelim */
+    [data-testid="stAppViewContainer"]::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 10px;
+        height: 100%;
+        background: linear-gradient(to bottom, #7d5a50, #4a3728);
+        box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+
+    /* Şiir Başlıklarını Koyu Yapmak İçin Stil */
+    .siir-baslik {
+        font-weight: 800 !important;
         color: #2c1e12 !important;
+        font-size: 1.3rem !important;
+        margin-bottom: 5px;
+        display: block;
+        text-decoration: underline;
     }
 
-    /* 3. Şiir Kutusu (st.code) Tasarımı */
+    /* Yazı Tipi */
+    html, body, [class*="css"] {
+        font-family: 'Georgia', serif !important;
+    }
+
+    /* Şiir Kutusu */
     code {
-        background-color: rgba(255, 255, 255, 0.5) !important;
-        border: 1px solid #d3c4a8 !important;
-        color: #2c1e12 !important;
-        font-size: 1.1rem !important;
-        line-height: 1.6 !important;
-        border-radius: 10px !important;
-    }
-
-    /* 4. Butonun Üzerine Gelince (Hover) Efekti */
-    .stButton>button:hover {
-        background-color: #4a3728 !important;
-        color: #f5f5dc !important;
-        border: 2px solid #f5f5dc !important;
+        background-color: rgba(255, 255, 255, 0.4) !important;
+        border: none !important;
+        border-left: 4px solid #7d5a50 !important; /* Sol tarafta şık bir çizgi */
+        font-size: 1.15rem !important;
+        color: #1a1a1a !important;
     }
     </style>
     """, unsafe_allow_html=True)
