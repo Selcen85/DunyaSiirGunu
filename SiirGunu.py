@@ -29,16 +29,21 @@ st.markdown("""
     }
 
     /* Şiir Kutusu Tasarımı */
-    code {
-        background-color: rgba(255, 255, 255, 0.4) !important; /* Şeffaf beyaz arka plan */
-        color: #1a1a1a !important; /* Koyu yazı */
+   code {
+        background-color: rgba(255, 255, 255, 0.5) !important; /* Biraz daha belirgin beyazlık */
+        color: #1a1a1a !important; 
         font-size: 1.25rem !important;
         line-height: 1.6 !important;
         border: none !important;
-        border-left: 5px solid #7d5a50 !important; /* Sol tarafta zarif çizgi */
+        border-left: 5px solid #7d5a50 !important; 
         border-radius: 8px !important;
         padding: 25px !important;
-        font-weight: normal !important;
+        
+        /* ÖNEMLİ: Tüm metni normal font kalınlığına zorlar, parlamaları engeller */
+        font-weight: 400 !important; 
+        white-space: pre !important; /* Mısra yapısını korur */
+        display: block !important;
+        font-family: 'Georgia', serif !important; /* Daktilo fontu yerine edebi font */
     }
 
     /* Buton Tasarımı */
@@ -1793,7 +1798,7 @@ st.markdown("""
 st.write("---")
 
 # 4. Buton ve Şiir Seçme (Yaprak Animasyonuyla Birlikte)
-if st.button('Günün Şiirini Seç 📜'):
+if st.button('Bir Mısra Güzellik Seç 📜'):
     # SONBAHAR YAPRAKLARI ANİMASYONU
     st.markdown("""
         <div style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 9999;">
@@ -1816,12 +1821,8 @@ if st.button('Günün Şiirini Seç 📜'):
     secilen = random.choice(siirler)
     
     # Başlık ve Şiiri Ayırıp Şık Gösterme
-    parcalar = secilen.split("\n\n", 1)
-    if len(parcalar) > 1:
-        st.subheader(f"✒️ {parcalar[0]}") # Başlığı koyu yapar
-        st.code(parcalar[1], language=None) # Şiiri dize dize gösterir
-    else:
-        st.code(secilen, language=None)
+    # Şiiri tek parça halinde gösteriyoruz (Eski düzen)
+    st.code(secilen, language=None)
 
     st.write("---")
     st.markdown("🌸 *Dünya, şiirle daha güzel bir yer.*")
