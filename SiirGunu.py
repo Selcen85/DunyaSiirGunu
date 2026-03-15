@@ -8,7 +8,7 @@ st.set_page_config(page_title="21 Mart Dünya Şiir Günü", page_icon="🖋️"
 # --- KURUMSAL LOGO LINKI ---
 # Buraya okulunuzun logosunun internetteki .png veya .jpg linkini yapıştırın.
 # Eğer linkiniz yoksa, örnek bir logo linki bıraktım, onu değiştirebilirsiniz.
-OKUL_LOGO_LINKI = "https://hizliresim.com/qiyfcs7"
+OKUL_LOGO_LINKI = "https://i.hizliresim.com/qiyfcs7.png"
 
 # --- ESKİTME TASARIM VE VINTAGE YAPRAKLAR (CSS) ---
 st.markdown("""
