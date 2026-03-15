@@ -1,9 +1,6 @@
 import streamlit as st
 import random
 
-import streamlit as st
-import random
-
 # 1. Sayfa Ayarları
 st.set_page_config(page_title="21 Mart Dünya Şiir Günü", page_icon="🖋️")
 
