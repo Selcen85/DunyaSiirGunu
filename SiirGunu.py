@@ -5,6 +5,11 @@ import time
 # 1. Sayfa Ayarları
 st.set_page_config(page_title="21 Mart Dünya Şiir Günü", page_icon="🖋️")
 
+# --- KURUMSAL LOGO LINKI ---
+# Buraya okulunuzun logosunun internetteki .png veya .jpg linkini yapıştırın.
+# Eğer linkiniz yoksa, örnek bir logo linki bıraktım, onu değiştirebilirsiniz.
+OKUL_LOGO_LINKI = "https://hizliresim.com/qiyfcs7"
+
 # --- ESKİTME TASARIM VE VINTAGE YAPRAKLAR (CSS) ---
 st.markdown("""
     <style>
@@ -1783,6 +1788,21 @@ Ben açtım, ben girdim
 Selamlaştık ilk defa. - Metin Altıok"""
 ]
 
+# --- KURUMSAL LOGO VE İSİM BÖLÜMÜ ---
+# Logoyu ve okul adını sayfanın en üstüne yerleştirir.
+cols = st.columns([1, 4]) # Logoya 1 birim, okul adına 4 birim yer ayırır.
+with cols[0]:
+    if OKUL_LOGO_LINKI:
+        st.image(OKUL_LOGO_LINKI, width=100) # Logoyu gösterir.
+with cols[1]:
+    st.markdown("""
+        ## İzmir Özel Tevfik Fikret Okulları
+        ### 21 Mart Dünya Şiir Günü Antolojisi
+    """)
+
+st.divider() # Araya kalın bir çizgi çeker.
+
+
 # 3. Ana Başlık ve Karşılama (Sadece 1 kez yazılır)
 st.title("🎉 21 Mart Dünya Şiir Günü'nüz Kutlu Olsun! 🌸")
 st.markdown("""
@@ -1798,6 +1818,11 @@ st.markdown("""
 st.write("---")
 
 # 4. Buton ve Şiir Seçme (Yaprak Animasyonuyla Birlikte)
+
+if st.button('Bir Mısra Güzellik Seç📜'):
+    with st.spinner('🌸 Size özel bir mısra hazırlanıyor...'):
+        time.sleep(1) # Zarif bir bekleme süresi
+        
 if st.button('Bir Mısra Güzellik Seç 📜'):
     # SONBAHAR YAPRAKLARI ANİMASYONU
     st.markdown("""
@@ -1830,6 +1855,6 @@ else:
     # Butona basılmadan önce görünen mesaj
     st.info("Ruhunuza iyi gelecek bir şiir için tıklamanız yeterli. ✨")
 
-# 5. Alt Bilgi
+# 5. Alt Bilgi (Kurumsal Bilgi Eklendi)
 st.divider()
-st.caption("🖋️ Kalemin mısrayla, gönlün huzurla buluştuğu bir gün dileriz. 🌸")
+st.caption("🖋️ İzmir Özel Tevfik Fikret Okulları - Kalemin mısrayla buluştuğu günler dileriz. ✨🌸")
