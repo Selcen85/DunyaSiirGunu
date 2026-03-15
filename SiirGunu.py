@@ -1854,16 +1854,17 @@ else:
 st.divider()
 st.caption("🖋️ İzmir Özel Tevfik Fikret Okulları - Kalemin mısrayla buluştuğu günler dileriz. ✨🌸")
 
-# --- YAN MENÜ MÜZİK BÖLÜMÜ ---
+# --- YAN MENÜ MÜZİK BÖLÜMÜ (Erik Satie) ---
 with st.sidebar:
     st.markdown("### 🎹 Şiir Dinletisi")
-    st.markdown("Şiirlerin ruhuna eşlik etmesi için fon müziğini başlatabilirsiniz:")
+    st.write("Mısraların büyüsüne Erik Satie'nin tınılarıyla eşlik edin:")
     
-    # Zarif bir piyano müziği (Erik Satie - Gymnopedie No.1 tarzında huzurlu bir parça)
-    audio_url = "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3"
+    # Erik Satie - Gymnopedie No.1 (Klasik Piyano)
+    # Bu link doğrudan mp3 dosyasına yönlendirir
+    audio_url = "https://raw.githubusercontent.com/Anant-m08/Erik-Satie-Gymnopedie-No.-1/master/Erik%20Satie%20-%20Gymnopedie%20No.%201.mp3"
     
     st.audio(audio_url, format="audio/mp3")
     
     st.write("---")
-    st.caption("🖋️ 'Şiir, sesle anlam arasında o ince çizgidir.'")
-    st.image(OKUL_LOGO_LINKI, width=100) # Okul logosunu yan menüde de küçükçe gösterelim
+    st.info("💡 Sol üstteki '>' işaretine basarak bu paneli kapatıp şiirinize odaklanabilirsiniz.")
+    st.caption("🖋️ İzmir Özel Tevfik Fikret Okulları")
