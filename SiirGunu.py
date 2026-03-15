@@ -1,40 +1,74 @@
 import streamlit as st
 import random
+import time
 
 # 1. Sayfa Ayarları
 st.set_page_config(page_title="21 Mart Dünya Şiir Günü", page_icon="🖋️")
 
-# --- ESKİTME TASARIM VE SADELİK ---
+# --- ESKİTME TASARIM VE VINTAGE YAPRAKLAR (CSS) ---
 st.markdown("""
     <style>
-    /* Ana Arka Plan */
+    /* Ana Arka Plan Ayarları: Eskitilmiş Kağıt Dokusu ve Vintage Süsler */
     [data-testid="stAppViewContainer"] {
-        background-color: #f5f5dc !important; /* Bej rengi */
+        background-color: #f3ead8 !important; /* Eskitilmiş kağıt tonu */
         background-image: 
-            url("https://www.transparenttextures.com/patterns/natural-paper.png"),
-            url("https://img.icons8.com/ios/100/7d5a50/vintage-wrapper.png"),    
-            url("https://img.icons8.com/ios/150/7d5a50/quill-with-ink.png");      
+            url("https://www.transparenttextures.com/patterns/natural-paper.png"), /* Hafif doku */
+            url("https://img.icons8.com/ios/100/7d5a50/vintage-wrapper.png"),    /* Sol Üst Süs */
+            url("https://img.icons8.com/ios/150/7d5a50/quill-with-ink.png");      /* Sağ Alt Tüy */
         background-position: center, left 20px top 20px, right 30px bottom 30px !important;
         background-repeat: repeat, no-repeat, no-repeat !important;
         background-attachment: fixed !important;
         background-size: auto, 80px, 150px !important;
+        opacity: 0.96;
     }
 
-    /* Yazı Tipi */
+    /* Yazı Tipi ve Genel Renkler */
     html, body, [class*="css"] {
-        font-family: 'Georgia', serif !important;
-        color: #3e2723 !important;
+        font-family: 'Georgia', serif !important; /* Klasik kitap fontu */
+        color: #3e2723 !important; /* Mürekkep kahverengisi */
     }
 
-    /* Şiir Kutusu (Dizeleri koruyan alan) */
+    /* Şiir Kutusu Tasarımı */
     code {
-        background-color: rgba(255, 255, 255, 0.3) !important;
-        color: #1b1b1b !important;
-        font-size: 1.2rem !important;
+        background-color: rgba(255, 255, 255, 0.4) !important; /* Şeffaf beyaz arka plan */
+        color: #1a1a1a !important; /* Koyu yazı */
+        font-size: 1.25rem !important;
+        line-height: 1.6 !important;
         border: none !important;
-        padding: 20px !important;
-        /* Koyu çıkmayı engelleyen temel ayar */
-        font-weight: normal !important; 
+        border-left: 5px solid #7d5a50 !important; /* Sol tarafta zarif çizgi */
+        border-radius: 8px !important;
+        padding: 25px !important;
+        font-weight: normal !important;
+    }
+
+    /* Buton Tasarımı */
+    .stButton>button {
+        border-radius: 20px !important;
+        background-color: #7d5a50 !important; /* Vintage kahverengi */
+        color: #f3ead8 !important; /* Arka plan tonunda yazı */
+        border: 2px solid #3e2723 !important;
+        padding: 12px 30px !important;
+        font-weight: bold !important;
+        transition: all 0.3s ease;
+    }
+    .stButton>button:hover {
+        background-color: #5d4037 !important;
+        border-color: #f3ead8 !important;
+    }
+
+    /* Şiir Başlığı Stili */
+    .siir-baslik {
+        font-weight: bold !important;
+        color: #2c1e12 !important;
+        font-size: 1.3rem !important;
+        margin-bottom: 5px;
+        display: block;
+        text-decoration: underline;
+    }
+
+    /* Şiir İçeriği Stili */
+    .siir-icerik {
+        font-weight: normal !important;
     }
     </style>
     """, unsafe_allow_html=True)
@@ -1759,6 +1793,39 @@ st.markdown("""
 """)
 
 st.write("---") 
+
+# --- FARKLI RENKTE VINTAGE YAPRAKLAR VE ÇİÇEKLER ANİMASYONU (HTML/CSS) ---
+# Balonlar yerine farklı renklerde zarif yapraklar ve çiçekler uçmasını sağlar.
+st.markdown("""
+    <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1000; overflow: hidden;">
+        <style>
+            .vintage-leaf {
+                position: absolute;
+                background-size: contain;
+                background-repeat: no-repeat;
+                opacity: 0.8;
+                animation: floatUpwards linear infinite;
+            }
+            @keyframes floatUpwards {
+                0% { transform: translateY(110vh) rotate(0deg); opacity: 0.8; }
+                100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
+            }
+        </style>
+        
+        <div class="vintage-leaf" style="width: 20px; height: 20px; left: 10%; animation-duration: 15s; background-image: url('https://img.icons8.com/ios-filled/50/4caf50/leaf.png');"></div>
+        <div class="vintage-leaf" style="width: 25px; height: 25px; left: 25%; animation-duration: 18s; animation-delay: 2s; background-image: url('https://img.icons8.com/ios-filled/50/e91e63/rose.png');"></div>
+        <div class="vintage-leaf" style="width: 18px; height: 18px; left: 40%; animation-duration: 12s; animation-delay: 1s; background-image: url('https://img.icons8.com/ios-filled/50/7d5a50/leaf.png');"></div>
+        <div class="vintage-leaf" style="width: 22px; height: 22px; left: 60%; animation-duration: 16s; animation-delay: 3s; background-image: url('https://img.icons8.com/ios-filled/50/ff9800/leaf.png');"></div>
+        <div class="vintage-leaf" style="width: 24px; height: 24px; left: 75%; animation-duration: 19s; animation-delay: 1.5s; background-image: url('https://img.icons8.com/ios-filled/50/9c27b0/lavender.png');"></div>
+        <div class="vintage-leaf" style="width: 21px; height: 21px; left: 88%; animation-duration: 14s; animation-delay: 4s; background-image: url('https://img.icons8.com/ios-filled/50/ffeb3b/sunflower.png');"></div>
+        
+        <div class="vintage-leaf" style="width: 19px; height: 19px; left: 15%; animation-duration: 17s; animation-delay: 5s; background-image: url('https://img.icons8.com/ios-filled/50/4caf50/leaf.png');"></div>
+        <div class="vintage-leaf" style="width: 26px; height: 26px; left: 35%; animation-duration: 20s; animation-delay: 6s; background-image: url('https://img.icons8.com/ios-filled/50/e91e63/rose.png');"></div>
+        <div class="vintage-leaf" style="width: 17px; height: 17px; left: 55%; animation-duration: 13s; animation-delay: 7s; background-image: url('https://img.icons8.com/ios-filled/50/7d5a50/leaf.png');"></div>
+        <div class="vintage-leaf" style="width: 23px; height: 23px; left: 70%; animation-duration: 18s; animation-delay: 8s; background-image: url('https://img.icons8.com/ios-filled/50/ff9800/leaf.png');"></div>
+        <div class="vintage-leaf" style="width: 22px; height: 22px; left: 85%; animation-duration: 15s; animation-delay: 9s; background-image: url('https://img.icons8.com/ios-filled/50/9c27b0/lavender.png');"></div>
+    </div>
+    """, unsafe_allow_html=True)
 
 # 4. Buton ve Mantık (Sadece Bir Kez Yazıldı)
 if st.button('Bir Mısra Güzellik Seç 📜'):
