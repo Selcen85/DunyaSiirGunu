@@ -914,7 +914,7 @@ Ama gitme, Lavinia.
 Adını gizleyeceğim
 Sen de bilme, Lavinia.   1957 - Özdemir Asaf""",
 
-    """Bence Şimdi Sen De Herkes Gibisin
+    """Bence Şimdi Sen de Herkes Gibisin
 Gözlerim gözünde aşkı seçmiyor
 Onlardan kalbime sevda geçmiyor
 Ben yordum ruhumu biraz da sen yor
@@ -2092,15 +2092,16 @@ if st.button('Bir Mısra Güzellik Seç 📜'):
 
     # Şiir Seçimi
     secilen = random.choice(siirler)
-    
-    # Başlık ve Şiiri Ayırıp Şık Gösterme
-    # Şiiri tek parça halinde gösteriyoruz (Eski düzen)
+    st.markdown("### 🖋️ Sizin İçin Seçilen Şiir:")
     st.code(secilen, language=None)
-
+    
     st.write("---")
-    st.markdown("🌸 *Dünya, şiirle daha güzel bir yer.*")
+    # İşte gizli ve kibar yönlendirme burada:
+    st.markdown("🌸 *Belki de bir sonraki mısra ruhunuza daha yakın bir yerlerdedir... Tekrar tıklayarak keşfe devam edebilirsiniz.*")
+
 else:
-    st.info("Ruhunuza iyi gelecek bir şiir ve huzurlu bir ezgi için tıklamanız yeterli. ✨")
+    # Kullanıcı butona basmadan önce gördüğü kısım
+    st.info("✨ Her tıklama yeni bir yolculuktur. Ruhunuza iyi gelecek mısrayı bulana dek dilediğinizce seçim yapabilirsiniz.")
 
 # 5. Alt Bilgi (Kurumsal Bilgi Eklendi)
 st.divider()
