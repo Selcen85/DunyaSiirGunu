@@ -4,12 +4,12 @@ import random
 # 1. Sayfa Ayarları
 st.set_page_config(page_title="21 Mart Dünya Şiir Günü", page_icon="🖋️")
 
-# --- ESKİTME TASARIM VE SİMGELER ---
+# --- ESKİTME TASARIM VE SADELİK ---
 st.markdown("""
     <style>
-    /* Ana Arka Plan Ayarları */
+    /* Ana Arka Plan */
     [data-testid="stAppViewContainer"] {
-        background-color: #f5f5dc !important; 
+        background-color: #f5f5dc !important; /* Bej rengi */
         background-image: 
             url("https://www.transparenttextures.com/patterns/natural-paper.png"),
             url("https://img.icons8.com/ios/100/7d5a50/vintage-wrapper.png"),    
@@ -20,31 +20,21 @@ st.markdown("""
         background-size: auto, 80px, 150px !important;
     }
 
-    /* Yazı Tipi ve Genel Renkler */
+    /* Yazı Tipi */
     html, body, [class*="css"] {
         font-family: 'Georgia', serif !important;
         color: #3e2723 !important;
     }
 
-    /* Şiir Kutusu Tasarımı */
+    /* Şiir Kutusu (Dizeleri koruyan alan) */
     code {
-        background-color: rgba(255, 255, 255, 0.4) !important;
-        color: #1a1a1a !important;
-        font-size: 1.25rem !important;
-        line-height: 1.6 !important;
+        background-color: rgba(255, 255, 255, 0.3) !important;
+        color: #1b1b1b !important;
+        font-size: 1.2rem !important;
         border: none !important;
-        border-left: 5px solid #7d5a50 !important;
-        padding: 25px !important;
-    }
-
-    /* Buton Tasarımı */
-    .stButton>button {
-        border-radius: 20px !important;
-        background-color: #7d5a50 !important;
-        color: #f5f5dc !important;
-        border: 2px solid #3e2723 !important;
-        padding: 12px 30px !important;
-        font-weight: bold !important;
+        padding: 20px !important;
+        /* Koyu çıkmayı engelleyen temel ayar */
+        font-weight: normal !important; 
     }
     </style>
     """, unsafe_allow_html=True)
