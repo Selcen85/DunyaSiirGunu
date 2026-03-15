@@ -2097,7 +2097,7 @@ if st.button('Bir Mısra Güzellik Seç 📜'):
     # Şiiri tek parça halinde gösteriyoruz (Eski düzen)
     st.code(secilen, language=None)
 
-   st.write("---")
+    st.write("---")
     st.markdown("🌸 *Dünya, şiirle daha güzel bir yer.*")
 else:
     st.info("Ruhunuza iyi gelecek bir şiir ve huzurlu bir ezgi için tıklamanız yeterli. ✨")
