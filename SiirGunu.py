@@ -1822,9 +1822,10 @@ Ben açtım, ben girdim
 Selamlaştık ilk defa. - Metin Altıok"""
 ]
 
-# 3. Görsel Tasarım
+# 3. Görsel Tasarım (Sadece Bir Kez Yazıldı)
 st.balloons()
-st.title("🎉 21 Mart Dünya Şiir Günü'nüz Kutlu Olsun!🌸")
+st.title("🎉 21 Mart Dünya Şiir Günü'nüz Kutlu Olsun! 🌸")
+
 st.markdown("""
     ### Merhaba Şiir Dostu! ✨
     🖋️ **Bir kalemden dökülen mısralar, bugün bir çiçek gibi gönlünüzde açsın.**
@@ -1835,13 +1836,13 @@ st.markdown("""
     🌷 *Aşağıdaki butona basarak size özel seçilen şiiri okuyabilirsiniz.*
 """)
 
-st.write("---") # Araya ince bir çizgi çeker
+st.write("---") 
 
-# 4. Buton ve Mantık
+# 4. Buton ve Mantık (Sadece Bir Kez Yazıldı)
 if st.button('Bir Mısra Güzellik Seç 📜'):
     secilen = random.choice(siirler)
     st.markdown("### 🖋️ Sizin İçin Seçilen Şiir:")
-    st.code(secilen, language=None)
+    st.code(secilen, language=None) # Şiiri alt alta gösterir
     
     st.write("---")
     st.markdown("🌸 *Dünya, şiirle daha güzel bir yer.*")
