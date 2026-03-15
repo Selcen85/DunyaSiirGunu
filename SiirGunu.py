@@ -1854,26 +1854,26 @@ else:
 st.divider()
 st.caption("🖋️ İzmir Özel Tevfik Fikret Okulları - Kalemin mısrayla buluştuğu günler dileriz. ✨🌸")
 
-# --- YAN MENÜ MÜZİK BÖLÜMÜ ---
+# --- YAN MENÜ MÜZİK BÖLÜMÜ (MP3 FORMATI - KESİN ÇÖZÜM) ---
 with st.sidebar:
     st.markdown("### 🎹 Şiir Dinletisi")
     st.write("Mısraların büyüsüne klasik tınılarla eşlik edin:")
     
-    # Ana Seçenek: Erik Satie - Gymnopedie No. 1
-    satie_url = "https://upload.wikimedia.org/wikipedia/commons/b/bc/Erik_Satie_-_Gymnop%C3%A9die_No._1.ogg"
+    # Erik Satie - Gymnopedie No. 1 (MP3 formatında hızlı kaynak)
+    satie_mp3 = "https://www.mfiles.co.uk/mp3-downloads/erik-satie-gymnopedie-1.mp3"
     
-    # Yedek Seçenek: Beethoven - Moonlight Sonata
-    beethoven_url = "https://upload.wikimedia.org/wikipedia/commons/1/18/Moonlight_Sonata_1st_Movement_-_Opus_27_No._2.ogg"
+    # Beethoven - Moonlight Sonata (MP3 formatında hızlı kaynak)
+    beethoven_mp3 = "https://www.mfiles.co.uk/mp3-downloads/beethoven-moonlight-sonata-1st-movement.mp3"
     
     try:
-        # Önce Satie'yi çalmaya çalışır
-        st.audio(satie_url, format="audio/ogg")
+        # Önce Satie'yi deniyoruz
+        st.audio(satie_mp3, format="audio/mp3")
         st.caption("🎵 Erik Satie - Gymnopedie No. 1")
     except:
-        # Satie'de sorun çıkarsa Beethoven otomatik gelir
-        st.audio(beethoven_url, format="audio/ogg")
-        st.caption("🎵 L. van Beethoven - Moonlight Sonata")
+        # Hata olursa Beethoven devreye giriyor
+        st.audio(beethoven_mp3, format="audio/mp3")
+        st.caption("🎵 Beethoven - Moonlight Sonata")
     
     st.write("---")
-    st.info("💡 Müziği başlatmak için 'Play' tuşuna basınız.")
+    st.info("💡 Müziği başlatmak için yukarıdaki oynatıcıda 'Play' (▶️) tuşuna basınız.")
     st.caption("🖋️ İzmir Özel Tevfik Fikret Okulları")
