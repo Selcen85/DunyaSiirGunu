@@ -2128,12 +2128,12 @@ with st.sidebar:
 
 st.write("---")
 st.subheader("🖋️ Anı Defterine Bir Not Bırakın")
-st.markdown("Bu güzel güne dair hislerinizi aşağıdaki defterimize kaydedebilirsiniz:")
+st.markdown("Bu güzel güne dair hislerinizi veya aklınızdaki mısraları aşağıdaki defterimize kaydedebilirsiniz:")
 
 # Google Form Linkinizi buradaki tırnak içine yapıştırın
-google_form_linki = "https://forms.gle/eMqcyMaPFuMb4eps5"
+google_form_linki = "https://docs.google.com/forms/d/e/1FAIpQLScuPsQnCNvSTUcQRZ2Zi8EZ7v7_urdQTo8Ual18gz2P63N_KA/viewform?usp=dialog"
 
 # Formu sayfanın içine gömme (Iframe)
-st.components.v1.iframe("https://forms.gle/eMqcyMaPFuMb4eps5", height=600, scrolling=True)
+st.components.v1.iframe("https://docs.google.com/forms/d/e/1FAIpQLScuPsQnCNvSTUcQRZ2Zi8EZ7v7_urdQTo8Ual18gz2P63N_KA/viewform?usp=dialog", height=600, scrolling=True)
 
 st.info("💡 Notunuzu yazdıktan sonra formdaki 'Gönder' butonuna basmayı unutmayın.")
