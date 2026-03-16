@@ -2127,7 +2127,13 @@ with st.sidebar:
     st.caption("🖋️ İzmir Özel Tevfik Fikret Okulları")
 
 st.write("---")
-st.subheader("🖋️ Şiir Defterine Bir Not Bırakın")
-not_yazisi = st.text_input("Bu güzel güne dair hislerinizi bir cümleyle paylaşmak ister misiniz?")
-if st.button("Anı Defterine Kaydet"):
-    st.success("Notunuz gönül defterimize kaydedildi. Teşekkürler!")
+st.subheader("🖋️ Anı Defterine Bir Not Bırakın")
+st.markdown("Bu güzel güne dair hislerinizi aşağıdaki defterimize kaydedebilirsiniz:")
+
+# Google Form Linkinizi buradaki tırnak içine yapıştırın
+google_form_linki = "https://forms.gle/eMqcyMaPFuMb4eps5"
+
+# Formu sayfanın içine gömme (Iframe)
+st.components.v1.iframe(https://forms.gle/eMqcyMaPFuMb4eps5, height=500, scrolling=True)
+
+st.info("💡 Notunuzu yazdıktan sonra formdaki 'Gönder' butonuna basmayı unutmayın.")
