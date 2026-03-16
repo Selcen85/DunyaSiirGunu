@@ -500,7 +500,7 @@ Yağmur yağar ki sis basar ki kurt iner ki
 Ay bulanığında gümüş rengi çakallar 
 Ben demedim mi 
 Yalnız gitme demedim mi 
-Çiğdeme sor, chşmeye sor 
+Çiğdeme sor, çeşmeye sor 
 Tek açan menevşeye sor 
 Ayrılık getirir ayrılıklar 
 Birleş demedim mi 
@@ -930,7 +930,7 @@ Maziye karıştı şimdi yeminim
 Kalbimde senin için yok bile kinim
 Bence sen de şimdi herkes gibisin - Nazım Hikmet Ran""",
 
-    """Yaşadıklarımdan Öğrendiğim Bir şey Var
+    """Yaşadıklarımdan Öğrendiğim Bir Şey Var
 Yaşadıklarımdan öğrendiğim bir şey var:
 Yaşadın mı, yoğunluğuna yaşayacaksın bir şeyi
 Sevgilin bitkin kalmalı öpülmekten
@@ -1044,7 +1044,7 @@ Yine seni özlediğim içindir.
 
 Seni bunca özlemesem; bunca sevemezdim ki! - Ümit Yaşar Oğuzcan""",
 
-    """Güz Çiçeklerinden Nazıma Bir Çelenk
+    """Güz Çiçeklerinden Nazım'a Bir Çelenk
 Niçin öldün Nazım?
 Ne yaparız şimdi biz
 Şarkılarından yoksun?
