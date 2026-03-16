@@ -33,22 +33,29 @@ st.markdown("""
         color: #3e2723 !important; /* Mürekkep kahverengisi */
     }
 
-    /* Şiir Kutusu Tasarımı */
-   code {
-        background-color: rgba(255, 255, 255, 0.5) !important; /* Biraz daha belirgin beyazlık */
-        color: #1a1a1a !important; 
+   /* Şiir Kutusu Tasarımı - Karanlık Modu Engelleyen Kesin Ayar */
+    code {
+        background-color: rgba(255, 255, 255, 0.5) !important; /* Arka plan hep açık renk kalsın */
+        color: #1a1a1a !important; /* Yazı rengi hep siyah/koyu kalsın */
+        
+        /* Karanlık modun renkleri tersine çevirmesini engellemek için */
+        -webkit-text-fill-color: #1a1a1a !important; 
+        
         font-size: 1.25rem !important;
         line-height: 1.6 !important;
         border: none !important;
-        border-left: 5px solid #7d5a50 !important; 
+        border-left: 5px solid #7d5a50 !important;
         border-radius: 8px !important;
         padding: 25px !important;
-        
-        /* ÖNEMLİ: Tüm metni normal font kalınlığına zorlar, parlamaları engeller */
-        font-weight: 400 !important; 
-        white-space: pre !important; /* Mısra yapısını korur */
+        font-weight: 400 !important;
         display: block !important;
-        font-family: 'Georgia', serif !important; /* Daktilo fontu yerine edebi font */
+        font-family: 'Georgia', serif !important;
+    }
+
+    /* Genel Sayfa Yazıları (Başlıklar vb.) */
+    h1, h2, h3, p, span, div {
+        color: #3e2723 !important; /* Tüm yazıları mürekkep rengine zorla */
+        -webkit-text-fill-color: #3e2723 !important;
     }
 
     /* Buton Tasarımı */
