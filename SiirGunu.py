@@ -2134,6 +2134,6 @@ st.markdown("Bu güzel güne dair hislerinizi aşağıdaki defterimize kaydedebi
 google_form_linki = "https://forms.gle/eMqcyMaPFuMb4eps5"
 
 # Formu sayfanın içine gömme (Iframe)
-st.components.v1.iframe(https://forms.gle/eMqcyMaPFuMb4eps5, height=500, scrolling=True)
+st.components.v1.iframe("https://forms.gle/eMqcyMaPFuMb4eps5", height=600, scrolling=True)
 
 st.info("💡 Notunuzu yazdıktan sonra formdaki 'Gönder' butonuna basmayı unutmayın.")
